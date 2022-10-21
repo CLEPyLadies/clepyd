@@ -20,13 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# TODO: Update & hide key before deploying site
 SECRET_KEY = 'django-insecure-d1_h@!t1%v%_4_b7y38vjpdz-hopilzm-q$yezt(e3evk*miht'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# TODO: Set to False before deploying site
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+if not DEBUG:
+    ALLOWED_HOSTS = ['.clepyd.org']
 
 # Application definition
 
@@ -105,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
